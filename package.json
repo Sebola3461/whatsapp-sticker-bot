@@ -1,0 +1,23 @@
+{
+  "name": "stickerbot",
+  "version": "1.0.0",
+  "description": "Generate whatsapp stickers via chat",
+  "main": "index.ts",
+  "scripts": {
+    "test": "ts-node-dev --transpile-only --respawn --ignore-watch node_modules",
+    "start": "node index.js",
+    "build": "tsc",
+    "dev": "ts-node-dev --transpile-only --respawn --ignore-watch node_modules ./index.ts"
+  },
+  "author": "Sebola3461",
+  "license": "ISC",
+  "dependencies": {
+    "colors": "^1.4.0",
+    "dotenv": "^16.0.3",
+    "qrcode-terminal": "^0.12.0",
+    "whatsapp-web.js": "^1.19.5"
+  },
+  "devDependencies": {
+    "@types/qrcode-terminal": "^0.12.0"
+  }
+}
