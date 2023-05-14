@@ -28,6 +28,8 @@ export class StickerBot extends Client {
 		});
 		this.on("message_create", (message) => {
 			try {
+				if (!message.fromMe) return;
+
 				this.Events.handleMessageReceive.bind(this.Events)(message);
 			} catch (e) {
 				console.error(e);
