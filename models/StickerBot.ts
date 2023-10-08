@@ -9,13 +9,19 @@ export class StickerBot extends Client {
 	constructor() {
 		super({
 			puppeteer: {
-				args: process.env.NO_GUI == "true" ? ["--no-sandbox"] : [],
+				args:
+					process.env.NO_GUI == "true"
+						? ["--no-sandbox", "--disable-setuid-sandbox"]
+						: [],
 			},
 		});
 	}
 
 	async login() {
 		this.Logger.printInfo("Initializing...");
+
+		if (process.env.NO_GUI == "true")
+			this.Logger.printWarning("Running in NO_GUI mode");
 
 		this.initialize();
 
