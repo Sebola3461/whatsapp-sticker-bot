@@ -7,7 +7,11 @@ export class StickerBot extends Client {
 	public Events!: EventsService;
 
 	constructor() {
-		super({});
+		super({
+			puppeteer: {
+				args: process.env.NO_GUI == "true" ? ["--no-sandbox"] : [],
+			},
+		});
 	}
 
 	async login() {
